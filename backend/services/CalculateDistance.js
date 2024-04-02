@@ -1,17 +1,17 @@
 //dijkstra code for distance
 //input for source and destination and the email id
 
-  // Import any necessary modules or models
+// Import any necessary modules or models
 // For example, you may need to import a Location model to fetch data from the database
 
 // Define the graph representing the network of locations and their connections
 const graph = {
   // Define connections between locations and their distances
   // This data can be retrieved from a database or hard-coded here
-  'A': { 'B': 5, 'C': 3 },
-  'B': { 'A': 5, 'C': 2, 'D': 4 },
-  'C': { 'A': 3, 'B': 2, 'D': 7 },
-  'D': { 'B': 4, 'C': 7 }
+  A: { B: 5, C: 3 },
+  B: { A: 5, C: 2, D: 4 },
+  C: { A: 3, B: 2, D: 7 },
+  D: { B: 4, C: 7 },
 };
 
 // Implement Dijkstra's algorithm to find the shortest path
@@ -34,11 +34,11 @@ function dijkstra(graph, source, destination) {
   // Iterate while the queue is not empty
   while (!queue.isEmpty()) {
     const currentNode = queue.dequeue().element;
-    console.log(currentNode)
-
+    console.log(currentNode);
 
     // If the current node is the destination, we've found the shortest path
     if (currentNode === destination) {
+      console.log("Destination is reached!!");
       break;
     }
 
@@ -99,12 +99,33 @@ exports.CalculateDistance = async (req, res) => {
     // Use Dijkstra's algorithm to calculate the distance and shortest path
     const result = dijkstra(graph, source, destination);
     //const result = {distance: 10, path: 'abcd'};
+    const allCabs = getCabs();
 
+    const options = allCabs.map((cab) => ({
+      name: cab.name,
+      price: cab.price * result.distance,
+    }));
     // Return the result in the response
-    res.json({ email: email, source: source, destination: destination, distance: result.distance, path: result.path });
+    console.log("This is called!");
+    res.json({
+      email: email,
+      source: source,
+      destination: destination,
+      distance: result.distance,
+      path: result.path,
+      options: options,
+    });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server Error' });
+    res.status(500).json({ message: "Server Error" });
   }
 };
 
+// Function to get the available cabs
+const getCabs = () => {
+  return [
+    { name: "eco", price: 10 },
+    { name: "sedan", price: 15 },
+    { name: "suv", price: 20 },
+  ];
+};
