@@ -10,10 +10,10 @@ const CabService = require("./CabService");
 const graph = {
   // Define connections between locations and their distances
   // This data can be retrieved from a database or hard-coded here
-  A: { B: 5, C: 3 },
-  B: { A: 5, C: 2, D: 4 },
-  C: { A: 3, B: 2, D: 7 },
-  D: { B: 4, C: 7 },
+  Delhi: { Mumbai: 5, Chandigarh: 3 },
+  Mumbai: { Delhi: 5, Chandigarh: 2, Hyderabad: 4 },
+  Chandigarh: { Delhii: 3, Mumbai: 2, Hyderabad: 7 },
+  Hyderabad: { Mumbai: 4, Chandigarh: 7 },
 };
 
 // Implement Dijkstra's algorithm to find the shortest path
@@ -126,8 +126,8 @@ exports.CalculateDistance = async (req, res) => {
 // Function to get the available cabs
 const getCabs = () => {
   return [
-    { name: "eco", price: 10 },
-    { name: "sedan", price: 15 },
-    { name: "suv", price: 20 },
+    { name: "Economy", price: 10 },
+    { name: "Sedan", price: 15 },
+    { name: "SUV", price: 20 },
   ];
 };

@@ -1,9 +1,5 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
-import {
-  MaterialReactTable,
-  useMaterialReactTable,
-} from "material-react-table";
 import "./App.css";
 
 const Table = ({ d }) => {
@@ -11,9 +7,8 @@ const Table = ({ d }) => {
     return <></>;
   }
 
-const bookhandler = () => {
-    fetch("http://localhost:3002/bookcab?email=" +
-    d.email , {
+  const bookhandler = () => {
+    fetch("http://localhost:3002/bookcab?email=" + d.email, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -22,28 +17,30 @@ const bookhandler = () => {
     })
       .then((r) => r.json())
       .then((r) => {
-        alert("Your booking has been confirmed and the bookingID is: "+ r.bookingId);
+        alert(
+          "Your booking has been confirmed and the bookingID is: " + r.bookingId
+        );
       });
-
-
-
-}
+  };
+  
   return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+    <table className="table w-full">
       <thead>
-        <tr style={{ backgroundColor: "#f2f2f2", border: "1px solid #dddddd" }}>
-          <th style={{ padding: "8px", textAlign: "left" }}>Car Type</th>
-          <th style={{ padding: "8px", textAlign: "left" }}>Price</th>
-          <th style={{ padding: "8px", textAlign: "left" }}></th>
+        <tr className="bg-gray-100 border-b border-gray-300">
+          <th className="p-2 text-left">Car Type</th>
+          <th className="p-2 text-left">Price</th>
+          <th className="p-2 text-left"></th>
         </tr>
       </thead>
       <tbody>
         {d.options.map((item) => (
-          <tr key={item.name} style={{ border: "1px solid #dddddd" }}>
-            <td style={{ padding: "8px" }}>{item.name}</td>
-            <td style={{ padding: "8px" }}>{item.price}</td>
-            <td style={{ padding: "8px" }}>
-              <button className="btn btn-primary" onClick={bookhandler}>Book</button>
+          <tr key={item.name} className="border-b border-gray-300">
+            <td className="p-2">{item.name}</td>
+            <td className="p-2">{item.price}</td>
+            <td className="p-2">
+              <button className="btn btn-primary" onClick={bookhandler}>
+                Book
+              </button>
             </td>
           </tr>
         ))}
@@ -61,27 +58,6 @@ export default function App() {
 
   const [data, setData] = useState([]);
   const [travelData, setTravelData] = useState([]);
-
-  const columns = useMemo(
-    () => [
-      {
-        accessorKey: "options.name", //access nested data with dot notation
-        header: "Car",
-        size: 150,
-      },
-      {
-        accessorKey: "options.price",
-        header: "Price",
-        size: 150,
-      },
-    ],
-    []
-  );
-
-  // const table = useMaterialReactTable({
-  //   columns,
-  //   travelData, //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
-  // });
 
   const onButtonClick = async () => {
     setEmailError("");
@@ -112,7 +88,6 @@ export default function App() {
       });
   };
 
-
   const fetchSource = async () => {
     fetch("http://localhost:3002/locations", {
       method: "GET",
@@ -132,33 +107,33 @@ export default function App() {
   }, []);
 
   return (
-    <div className="mainContainer">
-      <div className="titleContainer">
-        <div>Cab booking System</div>
+    <div className="mainContainer p-4">
+      <div className="titleContainer mb-4">
+        <h1 className="text-3xl font-bold text-center">Cab Booking System</h1>
       </div>
-      <br />
-      <div className={"inputContainer"}>
+
+      <div className="inputContainer mb-4">
         <h3>Email</h3>
         <input
           value={email}
           placeholder="Enter your email here"
           onChange={(ev) => setEmail(ev.target.value)}
-          className={"inputBox"}
+          className="inputBox"
         />
         <label className="errorLabel">{emailError}</label>
       </div>
-      <br />
-      <div className={"inputContainer"}>
+
+      <div className="inputContainer mb-4">
         <h3>Source</h3>
         <Select
           placeholder="Enter Source"
           options={data}
-          className={"inputBox"}
+          className="inputBox"
           onChange={setSource}
         />
       </div>
-      <br />
-      <div className={"inputContainer"}>
+
+      <div className="inputContainer mb-4">
         <h3>Destination</h3>
         <Select
           placeholder="Enter Destination"
@@ -167,22 +142,19 @@ export default function App() {
           onChange={setDestination}
         />
       </div>
-      <br />
-      <div className={"inputContainer"}></div>
-      <div className="inputContainer"></div>
-      <div className="inputContainer">
-        <input
-          className="inputButton"
-          type="button"
-          onClick={onButtonClick}
-          value={"Search"}
-        />
+
+      <div className="buttonContainer">
+        <button className="btn btn-primary" onClick={onButtonClick}>
+          Search
+        </button>
       </div>
 
-      <div>
-        <h1>Travel Options</h1>
-        <Table d={travelData} />
-      </div>
+      {travelData.options && (
+        <div className="mt-4 text-center">
+          <h1 className="text-2xl font-bold mb-4">Travel Options</h1>
+          <Table d={travelData} />
+        </div>
+      )}
     </div>
   );
 }

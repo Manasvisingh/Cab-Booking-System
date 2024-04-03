@@ -18,10 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 // Get source and destinations
 app.get("/locations", (req, res) => {
   res.json([
-    { value: "A", label: "A" },
-    { value: "B", label: "B" },
-    { value: "C", label: "C" },
-    { value: "D", label: "D" },
+    { value: "Delhi", label: "Delhi" },
+    { value: "Mumbai", label: "Mumbai" },
+    { value: "Chandigarh", label: "Chandigarh" },
+    { value: "Hyderabad", label: "Hyderabad" },
   ]);
 });
 
@@ -29,6 +29,7 @@ app.get("/locations", (req, res) => {
 app.get("/bookcab", (req, res) => {
   // Call the bookCab function from the BookingService
   bookingservice.bookCab(req, res);
+
 });
 
 // Get booking details

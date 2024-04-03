@@ -1,3 +1,4 @@
+/* Reset default styles */
 html,
 body {
   padding: 0;
@@ -10,29 +11,90 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  padding: 5rem 0;
-  flex: 1;
+/* Main container styles */
+.mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
 }
 
-code {
-  background: #fafafa;
+/* Title container styles */
+.titleContainer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.titleContainer div {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input container styles */
+.inputContainer {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.errorLabel {
+  font-size: 0.8em;
+  color: red;
+}
+
+.inputBox {
+  width: 100%;
+  height: 48px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+  transition: border-color 0.3s ease;
 }
 
-input[type="button"] {
+.inputBox:focus {
+  border-color: #007bff;
+}
+
+/* Button styles */
+.inputButton {
   border: none;
   background: cornflowerblue;
   color: white;
   padding: 12px 24px;
-  margin: 8px;
   font-size: 24px;
   border-radius: 8px;
   cursor: pointer;
 }
+
+.inputButton:hover {
+  background-color: #0056b3;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Additional styles */
+/* Add any additional styles from the second CSS file here */
