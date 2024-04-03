@@ -8,7 +8,7 @@ const Table = ({ d }) => {
   }
 
   const bookhandler = () => {
-    fetch("https://cab-booking-system-1bcch2izz-manasvi-singhs-projects-8602c199.vercel.app/bookcab?email=" + d.email, {
+    fetch("https://cab-booking-system.vercel.app/bookcab?email=" + d.email, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ export default function App() {
     }
 
     fetch(
-      "https://cab-booking-system-1bcch2izz-manasvi-singhs-projects-8602c199.vercel.app/options?email=" +
+      "https://cab-booking-system.vercel.app/options?email=" +
         email +
         "&source=" +
         source.value +
@@ -89,7 +89,7 @@ export default function App() {
   };
 
   const fetchSource = async () => {
-    fetch("https://cab-booking-system-1bcch2izz-manasvi-singhs-projects-8602c199.vercel.app/locations", {
+    fetch("https://cab-booking-system.vercel.app/locations", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
