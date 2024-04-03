@@ -1,6 +1,6 @@
 # Cab Booking System
 
-The Cab Booking System is a MERN (MongoDB, Express.js, React.js, Node.js) application, utilizing modern web technologies to offer a seamless cab booking experience. It employs Dijkstra's algorithm to find the shortest path between source and destination locations, ensuring efficient passenger travel.
+### The Cab Booking System is a MERN (MongoDB, Express.js, React.js, Node.js) application, utilizing modern web technologies to offer a seamless cab booking experience. It employs Dijkstra's algorithm to find the shortest path between source and destination locations, ensuring efficient passenger travel.
 
 ## Dijkstra's algorithm
 Dijkstra's algorithm is a widely used algorithm in graph theory and computer science, named after Dutch computer scientist Edsger W. Dijkstra. It is used to find the shortest path between nodes in a graph, which in our case, represents the network of locations and their connections.The algorithm works by maintaining a priority queue of nodes, starting with the source node. It then explores neighboring nodes, updating the shortest distances and predecessors along the way. This process continues until the destination node is reached, ensuring the shortest path is found.
@@ -59,6 +59,6 @@ Open your web browser and access the application at http://localhost:3002.
 
 #### ✍️ Author - Manasvi Singh
 
-###3 📄 License
+#### 📄 License
 This project is licensed under the MIT License.
 
