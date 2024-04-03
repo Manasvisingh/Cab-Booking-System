@@ -1,19 +1,23 @@
 # Cab Booking System
 
-#### Welcome to the Cab Booking System! This platform offers a seamless experience for both passengers booking rides and administrators managing the system. Whether you're commuting daily or planning a trip, our system ensures convenience and reliability in booking cabs and managing travel details.
+#### The Cab Booking System is a MERN (MongoDB, Express.js, React.js, Node.js) application, utilizing modern web technologies to offer a seamless cab booking experience. It employs Dijkstra's algorithm to find the shortest path between source and destination locations, ensuring efficient passenger travel.
+
+## Dijkstra's algorithm
+##### Dijkstra's algorithm is a widely used algorithm in graph theory and computer science, named after Dutch computer scientist Edsger W. Dijkstra. It is used to find the shortest path between nodes in a graph, which in our case, represents the network of locations and their connections.The algorithm works by maintaining a priority queue of nodes, starting with the source node. It then explores neighboring nodes, updating the shortest distances and predecessors along the way. This process continues until the destination node is reached, ensuring the shortest path is found.
 
 ## 🚕 Features
 
-### 1. Cab Booking
-Users can effortlessly book cabs by providing their email, source, and destination locations.
-Real-time Availability: The system provides real-time availability of cabs based on the user's location and destination.
-### 2. Distance Calculation
-Utilizing Dijkstra's algorithm, the system efficiently calculates the shortest distance between source and destination locations. This ensures accurate fare calculation for users.
-### 3. Booking Management
-Customers have access to a comprehensive dashboard for managing bookings, viewing details, and confirming cab bookings.
-User Notifications: Users receive instant notifications regarding their booking status and cab availability.
-### 4. Scalability
-The system is built on a scalable architecture, capable of handling a large volume of users and bookings simultaneously.
+### 1. Effortless Booking
+* Users can book cabs by providing their email, source, and destination locations.
+* The system provides real-time availability of cabs based on the user's location and destination.
+### 2. Real-time Notifications
+* Receive detailed confirmation alert upon booking a cab.
+### 3. Multiple Cab Options
+* Choose from various cab types and select your preferred rate.
+### 4. Optimized Routing
+* Utilizes Dijkstra's algorithm to calculate the shortest path, providing the most efficient route to your destination.
+### 5. Reasponsive Design
+* Enjoy a seamless user experience across different devices with our responsive web design.
 
 
 ## 🛠️ Technologies Used
@@ -27,7 +31,7 @@ The system is built on a scalable architecture, capable of handling a large volu
 
 ### Step 1- Clone the Repository:
 ``` bash
-git clone <https://github.com/Manasvisingh/Cab-Booking-System.git>
+git clone https://github.com/Manasvisingh/Cab-Booking-System.git
 ``` 
 ### Step 2- Install Dependencies:
 ```bash
