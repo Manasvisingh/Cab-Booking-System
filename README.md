@@ -1,6 +1,6 @@
 # Cab Booking System
 
-## Welcome to the Cab Booking System! This platform offers a seamless experience for both passengers booking rides and administrators managing the system. Whether you're commuting daily or planning a trip, our system ensures convenience and reliability in booking cabs and managing travel details.
+#### Welcome to the Cab Booking System! This platform offers a seamless experience for both passengers booking rides and administrators managing the system. Whether you're commuting daily or planning a trip, our system ensures convenience and reliability in booking cabs and managing travel details.
 
 ## 🚕 Features
 
@@ -16,18 +16,20 @@ User Notifications: Users receive instant notifications regarding their booking 
 ### 4. Scalability
 The system is built on a scalable architecture, capable of handling a large volume of users and bookings simultaneously.
 
+
 ## 🛠️ Technologies Used
 
-### Frontend: React.js, Material-UI, MDB React UI Kit
-### Backend: Node.js, Express.js
-### Other Tools: Cors for cross-origin resource sharing, Node-fetch for making HTTP requests, UUID for generating unique identifiers
+#### Frontend: React.js, Material-UI, MDB React UI Kit
+#### Backend: Node.js, Express.js
+#### Other Tools: Cors for cross-origin resource sharing, Node-fetch for making HTTP requests, UUID for generating unique identifiers
+
 
 ## 📋 Setup Instructions
 
 ### Step 1- Clone the Repository:
 
 ``` bash
-git clone <repository-url>
+git clone <https://github.com/Manasvisingh/Cab-Booking-System.git>
 ``` 
 
 ### Step 2- Install Dependencies:
@@ -53,8 +55,8 @@ npm start
 ### Step 5- Access the Application:
 Open your web browser and access the application at http://localhost:3002.
 
-## ✍️ Author - Manasvi Singh
+##### ✍️ Author - Manasvi Singh
 
-## 📄 License
+##### 📄 License
 This project is licensed under the MIT License.
 
