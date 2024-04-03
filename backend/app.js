@@ -1,9 +1,12 @@
 const express = require("express");
 const { CalculateDistance } = require("./services/CalculateDistance");
 const BookingService = require("./services/BookingService");
+const CabService = require("./services/CabService");
 const cors = require("cors");
 const app = express();
 const bookingservice = new BookingService();
+const cabService = new CabService();
+
 
 app.use(cors());
 // Middleware
@@ -12,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 
-//get Source and destinations
+// Get source and destinations
 app.get("/locations", (req, res) => {
   res.json([
     { value: "A", label: "A" },
@@ -22,20 +25,27 @@ app.get("/locations", (req, res) => {
   ]);
 });
 
-app.get("/bookingpost", (req, res) => {
+// Book a cab
+app.get("/bookcab", (req, res) => {
+  // Call the bookCab function from the BookingService
   bookingservice.bookCab(req, res);
 });
 
+// Get booking details
 app.get("/booking", (req, res) => {
   bookingservice.getBooking(req, res);
 });
+
+// Calculate distance
 app.get("/options", CalculateDistance);
 
+// Get available cabs
 app.get("/cabs", (req, res) => {
-  res.json({ message: "Hello, world!" });
-});
-app.post("/cabs", (req, res) => {
-  res.json({ message: "Hello, world!" });
+  // Call the getAvailableCabs function from the CabService to fetch available cabs
+  const availableCabs = cabService.getAvailableCabs();
+
+  // Send the list of available cabs as a JSON response
+  res.json(availableCabs);
 });
 
 // Start the server

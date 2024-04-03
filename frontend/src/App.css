@@ -1,93 +1,120 @@
+
+
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
 .mainContainer {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 100px;
   height: 100vh;
+  background-color: #f0f0f0; 
 }
 
 .titleContainer {
-  display: flex;
-  flex-direction: column;
-  font-size: 64px;
-  font-weight: bolder;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
+.titleContainer h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333; 
+}
+
+/* Result and History containers */
 .resultContainer,
+.historyContainer {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+  background-color: #fff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* History item */
 .historyItem {
-  flex-direction: row;
   display: flex;
-  width: 400px;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd; /* Light gray border */
 }
 
-.historyContainer {
-  flex-direction: column;
-  display: flex;
-  height: 200px;
-  align-items: center;
-  flex-grow: 5;
-  justify-content: flex-start;
-}
-
+/* Button container */
 .buttonContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 260px;
 }
 
+.button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff; /* White text */
+  background-color: #007bff; /* Blue button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Input container */
 .inputContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.inputContainer > .errorLabel {
+.errorLabel {
+  font-size: 0.8em;
   color: red;
-  font-size: 12px;
 }
 
 .inputBox {
+  width: 100%;
+  max-width: 400px;
   height: 48px;
-  width: 400px;
-  font-size: large;
-  border-radius: 8px;
-  border: 1px solid grey;
-  padding-left: 8px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
 }
 
+.inputBox:focus {
+  border-color: #007bff; /* Blue border on focus */
+}
+
+/* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* Table header styling */
-th {
-  background-color: #f2f2f2;
-  border: 1px solid #dddddd;
-  padding: 8px;
-  text-align: left;
-}
-
-/* Table row styling */
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Table cell styling */
+th,
 td {
-  border: 1px solid #dddddd;
-  padding: 8px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Light gray border */
+}
+
+th {
+  background-color: #f2f2f2; /* Light gray background for headers */
 }
 
 /* Hover effect for table rows */
 tr:hover {
-  background-color: #e2e2e2;
-}
+  background-color: #f5f5f5; /* Light gray background on hover */
+} 
+

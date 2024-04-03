@@ -1,6 +1,8 @@
 //dijkstra code for distance
 //input for source and destination and the email id
 
+const CabService = require("./CabService");
+
 // Import any necessary modules or models
 // For example, you may need to import a Location model to fetch data from the database
 
@@ -99,10 +101,10 @@ exports.CalculateDistance = async (req, res) => {
     // Use Dijkstra's algorithm to calculate the distance and shortest path
     const result = dijkstra(graph, source, destination);
     //const result = {distance: 10, path: 'abcd'};
-    const allCabs = getCabs();
+    const allCabs = new CabService().getAvailableCabs();
 
     const options = allCabs.map((cab) => ({
-      name: cab.name,
+      name: cab.type,
       price: cab.price * result.distance,
     }));
     // Return the result in the response

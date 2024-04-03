@@ -7,10 +7,27 @@ import {
 import "./App.css";
 
 const Table = ({ d }) => {
-  if (d == undefined) {
+  if (d.options == undefined) {
     return <></>;
   }
 
+const bookhandler = () => {
+    fetch("http://localhost:3002/bookcab?email=" +
+    d.email , {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
+      .then((r) => r.json())
+      .then((r) => {
+        alert("Your booking has been confirmed and the bookingID is: "+ r.bookingId);
+      });
+
+
+
+}
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
@@ -21,12 +38,12 @@ const Table = ({ d }) => {
         </tr>
       </thead>
       <tbody>
-        {d.map((item) => (
+        {d.options.map((item) => (
           <tr key={item.name} style={{ border: "1px solid #dddddd" }}>
             <td style={{ padding: "8px" }}>{item.name}</td>
             <td style={{ padding: "8px" }}>{item.price}</td>
             <td style={{ padding: "8px" }}>
-              <button>Book</button>
+              <button className="btn btn-primary" onClick={bookhandler}>Book</button>
             </td>
           </tr>
         ))}
@@ -94,6 +111,7 @@ export default function App() {
         setTravelData(r);
       });
   };
+
 
   const fetchSource = async () => {
     fetch("http://localhost:3002/locations", {
@@ -163,7 +181,7 @@ export default function App() {
 
       <div>
         <h1>Travel Options</h1>
-        <Table d={travelData.options} />
+        <Table d={travelData} />
       </div>
     </div>
   );
