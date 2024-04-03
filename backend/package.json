@@ -1,13 +1,18 @@
 {
-    "name": "backend",
-    "version": "1.0.0",
-    "main": "app.js",
-    "scripts": {
-      "start": "node app.js",
-      "start:both": "node app.js && cd ../frontend && npm start"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": ""
+  "name": "cab-booking-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
+    "uuid": "^9.0.1"
   }
+}
