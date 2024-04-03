@@ -60,7 +60,7 @@ cd frontend
 npm start
 ```
 ### Step 4- Access the Application:
-Open your web browser and access the application at http://localhost:3002.
+Open your web browser and access the application at http://localhost:3000.
 
 
 
