@@ -5,6 +5,13 @@
 ## Dijkstra's algorithm
 Dijkstra's algorithm is a widely used algorithm in graph theory and computer science, named after Dutch computer scientist Edsger W. Dijkstra. It is used to find the shortest path between nodes in a graph, which in our case, represents the network of locations and their connections.The algorithm works by maintaining a priority queue of nodes, starting with the source node. It then explores neighboring nodes, updating the shortest distances and predecessors along the way. This process continues until the destination node is reached, ensuring the shortest path is found.
 
+## DEMO
+
+
+https://github.com/Manasvisingh/Cab-Booking-System/assets/92023373/3213b976-1cb5-4d35-aeb8-97492ce347b7
+
+
+
 ## 🚕 Features
 
 ### 1. Effortless Booking
