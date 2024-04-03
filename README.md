@@ -7,8 +7,7 @@ Dijkstra's algorithm is a widely used algorithm in graph theory and computer sci
 
 
 ## 🚀 Visit Now
-
-[Visit Now](https://cab-booking-system-dui7.vercel.app/)
+[Link](https://cab-booking-system-dui7.vercel.app/)
 ## DEMO
 
 
