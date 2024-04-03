@@ -8,8 +8,7 @@
 Users can effortlessly book cabs by providing their email, source, and destination locations.
 Real-time Availability: The system provides real-time availability of cabs based on the user's location and destination.
 ### 2. Distance Calculation
-Utilizing advanced algorithms, the system calculates the shortest distance between locations, ensuring accurate fare calculation.
-Optimized Routes: Users can choose from optimized routes to reach their destination faster and at lower costs.
+Utilizing Dijkstra's algorithm, the system efficiently calculates the shortest distance between source and destination locations. This ensures accurate fare calculation for users.
 ### 3. Booking Management
 Customers have access to a comprehensive dashboard for managing bookings, viewing details, and confirming cab bookings.
 User Notifications: Users receive instant notifications regarding their booking status and cab availability.
@@ -27,13 +26,10 @@ The system is built on a scalable architecture, capable of handling a large volu
 ## 📋 Setup Instructions
 
 ### Step 1- Clone the Repository:
-
 ``` bash
 git clone <https://github.com/Manasvisingh/Cab-Booking-System.git>
 ``` 
-
 ### Step 2- Install Dependencies:
-
 ```bash
 cd frontend
 npm install
@@ -52,8 +48,10 @@ node app.js
 cd frontend
 npm start
 ```
-### Step 5- Access the Application:
+### Step 4- Access the Application:
 Open your web browser and access the application at http://localhost:3002.
+
+
 
 ##### ✍️ Author - Manasvi Singh
 
